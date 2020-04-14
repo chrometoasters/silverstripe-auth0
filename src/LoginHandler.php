@@ -252,6 +252,9 @@ class LoginHandler extends RequestHandler
 
         try {
             $userData = $auth0->getUser();
+            if ($userData === null) {
+                throw new CoreException('User does not have valid access!');
+            }
         } catch (CoreException $ex) {
             return null;
         }

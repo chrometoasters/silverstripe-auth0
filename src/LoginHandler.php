@@ -129,6 +129,11 @@ class LoginHandler extends RequestHandler
         );
     }
 
+    public function loginForm()
+    {
+        return $this->Form();
+    }
+
     /**
      * Do the actual login action that will redirect the user to Auth0 for authentication.
      * @return void
